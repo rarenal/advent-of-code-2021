@@ -1,11 +1,11 @@
-import {readInput} from "../file-utils.js";
+import {readInput} from "../file-utils";
 
 // Common
-const inputArray = readInput('day1.txt')
+const getInput = () => readInput('day1.txt')
 					.map(Number);
 
 // Solutions
-const part1 = (inputArray) => {
+export const part1 = (inputArray: number[]): number => {
 	let increasedCount = 0;
 
 	inputArray.reduce((prevNumber, currentNumber) => {
@@ -16,10 +16,10 @@ const part1 = (inputArray) => {
 	return increasedCount;
 }
 
-const part2 = (inputArray) => {
+export const part2 = (inputArray: number[]): number => {
 	let increasedCount = 0;
 
-	const windowsArray =
+	const windowsArray: number[] =
 		inputArray
 			.map((value, index, array) => {
 				if (array[index + 1] === undefined || array[index + 2] === undefined) {
@@ -28,7 +28,7 @@ const part2 = (inputArray) => {
 
 				return value + array[index + 1] + array[index + 2];
 			} )
-			.filter((value) => value !== null);
+			.filter((value) => value !== null) as number[];
 
 	windowsArray
 		.reduce((prev, current) => {
@@ -39,5 +39,5 @@ const part2 = (inputArray) => {
 	return increasedCount;
 }
 
-console.log('Solution 1: ',part1(inputArray));
-console.log('Solution 2: ',part2(inputArray));
+console.log('Solution 1: ',part1(getInput()));
+console.log('Solution 2: ',part2(getInput()));

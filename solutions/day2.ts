@@ -1,17 +1,23 @@
-import { readInput } from "../file-utils.js";
+import { readInput } from "../file-utils";
 
 // Common
+interface Position {
+  x: number;
+  depth: number;
+  aim?: number;
+}
+
 const inputArray = readInput('day2.txt');
 
-const readAction = (action) => {
+const readAction = (action: string): [string, number] => {
 	const [direction, amount] = action.split(' ');
 
 	return [direction, Number(amount)];
 }
 
 // Solutions
-const part1 = (inputArray) => {
-	const currentPosition = { x: 0, depth: 0 };
+export const part1 = (inputArray: string[]) => {
+	const currentPosition: Position = { x: 0, depth: 0 };
 
 	inputArray.forEach((action) => {
 		const [direction, amount] = readAction(action);
@@ -36,8 +42,8 @@ const part1 = (inputArray) => {
 	return currentPosition.x * currentPosition.depth;
 }
 
-const part2 = (inputArray) => {
-	const currentPosition = { x: 0, depth: 0, aim: 0 };
+export const part2 = (inputArray: string[]) => {
+	const currentPosition: Position = { x: 0, depth: 0, aim: 0 };
 
 	inputArray.forEach((action) => {
 		const [direction, amount] = readAction(action);
