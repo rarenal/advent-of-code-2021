@@ -1,10 +1,8 @@
+import { transpose } from '../array-utils';
 import { readInput } from '../file-utils';
 
 // Common
 const inputArray = readInput('day3.txt');
-
-const transpose = <T>(matrix: T[][]): T[][] =>
-  matrix[0].map((column, columnIndex) => matrix.map((row, rowIndex) => matrix[rowIndex][columnIndex]));
 
 const byNumber = (a: string, b:string) => Number(a) - Number(b);
 
