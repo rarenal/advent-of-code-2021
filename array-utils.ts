@@ -4,3 +4,6 @@ export const transpose = <T>(matrix: T[][]): T[][] =>
 export const sumArrayValues = (numberArray: number[]): number => {
   return  numberArray.reduce((sum, value) => sum + value)
 }
+
+export const flatten = <T>(array: T[][]): T[] =>
+  [].concat.apply([], array);
