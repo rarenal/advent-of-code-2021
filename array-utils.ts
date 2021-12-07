@@ -7,3 +7,6 @@ export const sumArrayValues = (numberArray: number[]): number => {
 
 export const flatten = <T>(array: T[][]): T[] =>
   [].concat.apply([], array);
+
+export const minMax = (array: number[]): [number, number] =>
+  [Math.min(...array), Math.max(...array)];
