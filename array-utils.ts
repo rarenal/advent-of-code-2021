@@ -5,6 +5,10 @@ export const sumArrayValues = (numberArray: number[]): number => {
   return  numberArray.reduce((sum, value) => sum + value)
 }
 
+export const isTruthy = <T>(value: T) => !!value
+
+export const splitBySpaces = (value: string) => value.split(' ').filter(isTruthy);
+
 export const flatten = <T>(array: T[][]): T[] =>
   [].concat.apply([], array);
 
