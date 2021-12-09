@@ -14,3 +14,11 @@ export const flatten = <T>(array: T[][]): T[] =>
 
 export const minMax = (array: number[]): [number, number] =>
   [Math.min(...array), Math.max(...array)];
+
+export const getElementSafe = <T>(matrix: T[][], rowIndex: number, columnIndex: number): T | undefined => {
+  if (matrix[rowIndex] === undefined) {
+    return undefined;
+  }
+
+  return matrix[rowIndex][columnIndex];
+}
