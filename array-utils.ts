@@ -22,3 +22,22 @@ export const getElementSafe = <T>(matrix: T[][], rowIndex: number, columnIndex: 
 
   return matrix[rowIndex][columnIndex];
 }
+
+export const deepEqual = <T>(a: T[][], b: T[][]) =>
+  a.every((row, i) => row.every((value, j) => value === b[i][j]));
+
+export interface Adjacent {
+  i: number;
+  j: number;
+}
+
+export const adjacency: Adjacent[] = [
+  {i: 0, j: 1},
+  {i: 0, j: -1},
+  {i: 1, j: -1},
+  {i: 1, j: 1},
+  {i: 1, j: 0},
+  {i: -1, j: 0},
+  {i: -1, j: -1},
+  {i: -1, j: 1},
+];
