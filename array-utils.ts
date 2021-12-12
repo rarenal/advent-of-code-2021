@@ -9,8 +9,14 @@ export const isTruthy = <T>(value: T) => !!value
 
 export const splitBySpaces = (value: string) => value.split(' ').filter(isTruthy);
 
-export const flatten = <T>(array: T[][]): T[] =>
-  [].concat.apply([], array);
+export const flatten = <T>(matrix: T[][]): T[] => {
+  const flattened: T[] = [];
+  matrix.forEach((array) => {
+    flattened.push(...array);
+  });
+
+  return flattened;
+}
 
 export const minMax = (array: number[]): [number, number] =>
   [Math.min(...array), Math.max(...array)];
