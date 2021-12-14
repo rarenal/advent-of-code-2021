@@ -47,3 +47,5 @@ export const adjacency: Adjacent[] = [
   {i: -1, j: -1},
   {i: -1, j: 1},
 ];
+
+export const nArray = (n: number) => Array(n).fill(null);
